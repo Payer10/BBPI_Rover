@@ -7,6 +7,7 @@ from django.contrib.auth.hashers import check_password
 from rest_framework import status
 
 
+
 # these are signup api for teacher and student
 
 class TeacherSignupView(APIView):

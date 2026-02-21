@@ -3,6 +3,9 @@ from . import views
 
 urlpatterns = [
 
+    
+
+
     # 🔐 Authentication
     path('auth/teacher/signup/', views.TeacherSignupView.as_view(), name='teacher-signup'),
     path('auth/student/signup/', views.StudentSignupView.as_view(), name='student-signup'),

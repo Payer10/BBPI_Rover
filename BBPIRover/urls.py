@@ -17,7 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Welcome to the Scout API!")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('scoute/',include('scout.urls'))
+    path('scoute/',include('scout.urls')),
+    path('', index, name='home'),
 ]
