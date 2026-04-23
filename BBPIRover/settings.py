@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-t$$#o2@ibdthc8y@9l_9pinw3dvwmtrh-x(*njv0)k12m#y#)1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [''.vercel.app', '127.0.0.1', '.now.sh'']
 
 
 # Application definition
@@ -85,13 +85,11 @@ WSGI_APPLICATION = 'BBPIRover.wsgi.application'
 
 
 
-import dj_database_url
-import os
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL")
-    )
+    'default': {
+        
+    }
 }
 
 # postgresql://neondb_owner:npg_4MJTz8CZPHuL@ep-twilight-lake-aihrj900-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
