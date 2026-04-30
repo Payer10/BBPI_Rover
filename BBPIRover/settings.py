@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-t$$#o2@ibdthc8y@9l_9pinw3dvwmtrh-x(*njv0)k12m#y#)1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [''.vercel.app', '127.0.0.1', '.now.sh'']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', '.now.sh']
 
 
 # Application definition
@@ -88,7 +88,12 @@ WSGI_APPLICATION = 'BBPIRover.wsgi.application'
 
 DATABASES = {
     'default': {
-        
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "oqAYmOxcAcVurkrQhDRKAXIbvmUGOUXA",
+        "HOST": "ballast.proxy.rlwy.net",
+        "PORT": "25314",
     }
 }
 
