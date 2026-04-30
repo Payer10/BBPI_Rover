@@ -24,7 +24,7 @@ def home(request):
     return HttpResponse("Welcome to the Scout API!")
 
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('scoute/',include('scout.urls')),
-    path('', home, name='home'),
 ]
