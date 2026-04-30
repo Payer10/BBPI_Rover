@@ -20,11 +20,11 @@ from django.urls import path, include
 from django.http import HttpResponse
 
 
-def index(request):
+def home(request):
     return HttpResponse("Welcome to the Scout API!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('scoute/',include('scout.urls')),
-    path('', index, name='home'),
+    path('', home, name='home'),
 ]
