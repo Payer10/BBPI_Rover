@@ -4,6 +4,7 @@ djangorestframework==3.16.1
 djangorestframework_simplejwt==5.5.1
 future==1.0.0
 pillow==12.1.1
+psycopg2-binary==2.9.12
 PyJWT==2.11.0
 serializers==0.2.4
 sqlparse==0.5.5
