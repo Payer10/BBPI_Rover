@@ -84,19 +84,28 @@ WSGI_APPLICATION = 'BBPIRover.wsgi.application'
 # }
 
 
+import os
+from dotenv import load_dotenv
+from urllib.parse import urlparse, parse_qsl
 
+load_dotenv()
+
+# Replace the DATABASES section of your settings.py with this
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 
 DATABASES = {
     'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "railway",
-        "USER": "postgres",
-        "PASSWORD": "oqAYmOxcAcVurkrQhDRKAXIbvmUGOUXA",
-        "HOST": "ballast.proxy.rlwy.net",
-        "PORT": "25314",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': tmpPostgres.path.lstrip('/'),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
-
 # postgresql://neondb_owner:npg_4MJTz8CZPHuL@ep-twilight-lake-aihrj900-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
 
 
