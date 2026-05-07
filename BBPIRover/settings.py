@@ -82,6 +82,21 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5174",
+]
+
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
